@@ -295,39 +295,6 @@ function chamaPagePerso(path, conteiner, idsublicensa) {
         },
         success: function () {
             $(conteiner).load("web/" + path[path.length - 2]);
-            $.ajax({
-                url: "web/menu/preencheConexao.php",
-                dataType: "json",
-                data: {
-                    idsublicensa: idsublicensa,
-                },
-                success: function (data) {
-                    if (data != false) {
-                        $("#nome-conexao").val(data[0].nomeacesso);
-                        $("#cpf_cnpj").val(data[0].cpf_cnpj);
-                        $("#host").val(data[0].host);
-                        $("#porta").val(data[0].porta);
-                        $("#nome-banco").val(data[0].nomebanco);
-                        $("#user-banco").val(data[0].userbanco);
-                        $("#idsublicensa").val(data[0].idsublicensa);
-                        $("#senha").val(data[0].senhabanco);
-                        $("#ip_externo").val(data[0].ip_externo);
-
-                        $("#nome-conexao").prop("readonly", true);
-                        $("#cpf_cnpj").prop("readonly", true);
-                        $("#host").prop("readonly", true);
-                        $("#porta").prop("readonly", true);
-                        $("#nome-banco").prop("readonly", true);
-                        $("#user-banco").prop("readonly", true);
-                        $("#idsublicensa").prop("readonly", true);
-                        $("#senha").prop("readonly", true);
-                        $("#ip_externo").prop("readonly", true);
-
-                        $("#novo").val(0);
-                        $("#btn-salvar").hide();
-                    }
-                },
-            });
         },
     });
 }
