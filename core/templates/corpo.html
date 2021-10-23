@@ -1,0 +1,53 @@
+{% load static %}
+<script type="text/javascript" src="{% static 'js/index.js'%}"></script>
+<div style="width: 100%;height: 100vh;position: relative;">
+  <nav class="navbar navbar-light p-0 pr-2"
+    style="background-color: #A9A9A9; width: 100%;height: 70px; position: static;">
+    <span id="button-menu" class="fas fa-bars btn btn-default" role="button"></span>
+    <div class="navbar-header sidebar-expanded m-0 d-flex justify-content-center logo-menor"
+      style="background-color:  #A9A9A9;height:100%">
+      <span onclick="location.reload();"><img src="{% static 'img/kas.png' %}"
+          height="70px"></span>
+    </div>
+    <div>
+      <span onclick="location.reload();">
+        <img class='logo-nome' src="{% static 'img/kasonoff.png' %}">
+      </span>
+    </div>
+    <button onclick=" deslogar()" class="btn btn-outline-danger my-2 my-sm-0">Sair</button>
+  </nav>
+  <div class="row" id="body-row" style="height: 92.2%;">
+    <div id="index-menu"></div>
+    <div id="sidebar-container" class="d-none d-md-block sidebar-expanded scrollStyle"
+      style="height: auto; position: static; float: left;overflow-y:auto; ">
+      <ul id="lista_menu" class="list-group">
+
+      </ul>
+    </div>
+    <div class="col" id="index-pages" style="height: 100%; position:relative; float: left;overflow-y: auto;">
+
+    </div>
+  </div>
+</div>
+<div id="modal_msg" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_title">KAS OnOff</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="modal_text" class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">sair</button>
+        {% comment %} <button type="button" class="btn btn-primary">sim</button> {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+<input type="hidden" id="verifica_tem_vinculo" value="0">
+<input type="hidden" id="verifica_tem_vinculo_codigo" value="0">

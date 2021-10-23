@@ -1,0 +1,92 @@
+{% load static %}
+<script src="{% static 'pages/modulo/modulo.js' %}" type="text/javascript" charset="utf-8" async defer></script>
+<div id="form-banco">
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>
+              <div id="numero_modulo"></div>
+            </h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Cadastro</li>
+              <li class="breadcrumb-item active">Módulo</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Módulo </h3>
+              </div>
+              <div class="card-body">                
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Nome</label>
+                      <input type="text" class="form-control" id="modulo_apelido" />
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Modulo</label>
+                      <input type="text" class="form-control" id="modulo_nome" readonly />
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label>Mac</label>
+                      <input type="text" class="form-control" id="modulo_Mac" readonly />
+                    </div>
+                  </div>
+                </div>                
+                <div class="row">
+                  <div class="col-sm-2">
+                    <div class="form-group">
+                      <label>Ativo</label>
+                      <select class="form-control" id="modulo_ativo">
+                        <option value="0">Não</option>
+                        <option value="1">Sim</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group">
+                      <label>Sala</label>
+                      <select class="form-control" id="modulo_sala">
+                        <option value="0">Sem Sala</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-footer">
+                  <button id="btn-novo" class="btn btn-primary" onclick="limpa()">
+                    Limpar
+                  </button>
+                  <button id="btn_salvar" class="btn btn-primary" onclick="verifica_cadastro()">
+                    Salvar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="divTable"></div>
+      </div>
+    </section>
+  </div>
+  <div id="mensagem-excluir" title="Deseja excluir o Bico?" style="display:none"></div>
+  <input type="hidden" id="idsublicensa" value="" />
+  <input type="hidden" id="idmodulo" value="" />
+  <input type="hidden" id="novo" value="0" />
+</div>

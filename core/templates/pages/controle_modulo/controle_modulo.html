@@ -1,0 +1,35 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'pages/controle_modulo/controle_modulo.css' %}">
+<script>
+    var imgFreeze = "{% static 'img/icones/freeze.png' %}"
+    var imgHot = "{% static 'img/icones/hot.png' %}"
+</script>
+<script src="{% static 'pages/controle_modulo/controle_modulo.js' %}" type="text/javascript" charset="utf-8" async
+    defer></script>
+<div id="form-banco">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            <div id="numero_relatorio"></div>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Módulos</h1>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="container-fluid" id="modulos_controle">
+            </div>
+        </section>
+    </div>
+    <div id="controle_modulo"></div>
+</div>
