@@ -1,6 +1,6 @@
 function excluir(codigo, nome) {
     BootstrapDialog.show({
-        title: "TEÇÁ Air Control",
+        title: "KAS ONOFF Air Control",
         message: `Deseja excluir o protocolo ${nome}?`,
         buttons: [
             {

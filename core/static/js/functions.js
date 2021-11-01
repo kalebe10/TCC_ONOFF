@@ -15,10 +15,14 @@ function chamaPage(path, conteiner) {
             corpo = $("#index-pages")
             if(elm.hasClass("d-none")){
                 elm.removeClass("d-none")
-                corpo.addClass("d-none")
+                if($(window).width() < 768){
+                    corpo.addClass("d-none")
+                }
             }else{
                 elm.addClass("d-none")
-                corpo.removeClass("d-none")
+                if($(window).width() < 768){
+                    corpo.removeClass("d-none")
+                }
             }
         },
     });
@@ -70,11 +74,11 @@ function verificaAcesso() {
 
 function alertas(text = null, title = null) {
     if (!title) {
-        title = "TEÇÁ Air Control";
+        title = "KAS ONOFF";
     }
 
     if (!text) {
-        text = "TEÇÁ Air Control";
+        text = "KAS ONOFF";
     }
     // $("#modal_msg").modal("show");
     BootstrapDialog.show({

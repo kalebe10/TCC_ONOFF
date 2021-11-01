@@ -1,16 +1,15 @@
 {% load static %}
 <script type="text/javascript" src="{% static 'js/index.js'%}"></script>
 <div style="width: 100%;height: 100vh;position: relative;">
-  <nav class="navbar navbar-light p-0 pr-2"
-    style="background-color: #A9A9A9; width: 100%;height: 70px; position: static;">
+  <nav class="navbar navbar-light navbar-topo">
     <span id="button-menu" class="fas fa-bars btn btn-default" role="button"></span>
     <div class="navbar-header sidebar-expanded m-0 d-flex justify-content-center logo-menor"
       style="background-color:  #A9A9A9;height:100%">
       <span onclick="location.reload();"><img src="{% static 'img/kas.png' %}"
           height="70px"></span>
     </div>
-    <div>
-      <span onclick="location.reload();">
+    <div class='div_logo'>
+      <span onclick="location.reload();" class="h-100 d-flex align-items-center">
         <img class='logo-nome' src="{% static 'img/kasonoff.png' %}">
       </span>
     </div>

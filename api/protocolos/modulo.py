@@ -1,5 +1,6 @@
-import paho.mqtt.publish as publish
-
+import paho.mqtt.client as paho
+# import paho.mqtt.publish as publish
+from datetime import datetime
 
 class Protocolo():
 
@@ -18,11 +19,19 @@ class Protocolo():
         saida = hex(soma)[-2::]
         return saida
 
+    def on_publish(self, client, userdata, result):
+        print("entrou")
+        pass
+
     def comando(self, comando):
         check = self.checkSum(comando)
         msg = f"""{comando}{check}"""
         rota = f"modulo/domotica/{self.nome}"
-        print(rota)
-        publish.single(rota, payload=msg, hostname="broker.emqx.io", port=1883)
-
+        broker = "broker.emqx.io"
+        port = 1883
+        client1 = paho.Client("control1")
+        client1.on_publish = self.on_publish
+        client1.connect(broker, port)
+        ret = client1.publish(rota, msg)
+        print(f"enviado em {datetime.now()}")
         return msg

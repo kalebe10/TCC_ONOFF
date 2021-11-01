@@ -377,9 +377,13 @@ $("#button-menu").click(()=>{
     corpo = $("#index-pages")
     if(elm.hasClass("d-none")){
         elm.removeClass("d-none")
-        corpo.addClass("d-none")
+        if($(window).width() < 768){
+            corpo.addClass("d-none")
+        }
     }else{
         elm.addClass("d-none")
-        corpo.removeClass("d-none")
+        if($(window).width() < 768){
+            corpo.removeClass("d-none")
+        }
     }
 })

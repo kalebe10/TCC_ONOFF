@@ -1,6 +1,6 @@
 function excluir(codigo) {
     BootstrapDialog.show({
-        title: "TEÇÁ Air Control",
+        title: "KAS ONOFF Air Control",
         message: `Deseja excluir o usuario ${codigo}?`,
         buttons: [{
                 label: 'Sim',
